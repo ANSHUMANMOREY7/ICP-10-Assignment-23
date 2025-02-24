@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DICE ROLLER</title>
 </head>
 <style>
-    .container{
+    .container {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
     }
-    .box{
+
+    .box {
         border: 4px solid black;
         width: fit-content;
         height: fit-content;
@@ -21,14 +23,24 @@
         margin: 10px;
         text-align: center;
     }
-    .img{
+
+    .img {
         display: block;
         margin: 15px auto;
         height: 250px;
         padding: 10px;
-        
+
     }
-    .btn{
+
+    .img1 {
+        display: block;
+        margin: 15px auto;
+        height: 200px;
+        padding: 10px;
+
+    }
+
+    .btn {
         border: 2px solid black;
         border-radius: 10px;
         padding: 5px 45px;
@@ -37,21 +49,42 @@
         font-weight: 800;
     }
 </style>
+
 <body>
     <div class="container">
         <div class="box">
             <h1>DICE ROLLER</h1>
-            <img src="dice.png" alt="main image" class="img" id="image">
+            <img src="dice.png" alt="main image" class="img1" id="image">
             <button class="btn" id="button" onclick="roll()">ROLL</button>
-            
+
         </div>
     </div>
     <script>
-   const ElementImage =document.getElementById('image')
-   function roll() {
-    
-    
-   }
+        const ElementImage = document.getElementById('image')
+        function roll() {
+
+            const min = 1;
+            const max = 6;
+
+            const RANDOM = Math.floor(Math.random() * (max - min + 1)) + min
+            console.log(RANDOM);
+
+            if (RANDOM == 1) {
+                ElementImage.src = ('dice1.png')
+            } else if (RANDOM == 2) {
+                ElementImage.src = ('dice2.png')
+            } else if (RANDOM == 3) {
+                ElementImage.src = ('dice3.png')
+            } else if (RANDOM == 4) {
+                ElementImage.src = ('dice4.png')
+            } else if (RANDOM == 5) {
+                ElementImage.src = ('dice5.png')
+            } else if (RANDOM == 6) {
+                ElementImage.src = ('dice6.png')
+            }
+
+        }
     </script>
 </body>
+
 </html>
